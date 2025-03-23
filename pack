@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Page</title>
+</head>
+<body>
+    <h1>Enter Password to Get the Pack</h1>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="checkPassword()">Submit</button>
+
+    <script>
+        const encodedPassword = "S2VyYW1pZGFzMjAxNw==";
+
+        function checkPassword() {
+            const inputPassword = document.getElementById("passwordInput").value;
+            const decodedPassword = atob(encodedPassword);
+            if (inputPassword === decodedPassword) {
+                window.location.href = "https://www.mediafire.com/file/oi14a5h7ozvsq8y/";
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
